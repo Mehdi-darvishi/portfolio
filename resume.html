@@ -249,13 +249,65 @@
                   </div>
                 </div>
 
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
+                    Teaching Experience.
+                  </h3>
+                  <div
+                    x-data="teaching_experiences"
+                    class="grid sm:grid-cols-3 lg:gap-4 gap-4 mt-5"
+                  >
+                    <template x-for="edu in teaching_experience">
+                      <div
+                        class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800"
+                      >
+                        <h4
+                          class="text-gray-700 dark:text-slate-300 text-2xl font-semibold"
+                          x-text="edu.degree"
+                        ></h4>
+                        <h3
+                          class="text-gray-500 dark:text-slate-400 text-md italic mt-2"
+                          x-text="edu.institute"
+                        ></h3>
+                        <p
+                          class="text-gray-500 dark:text-slate-400 text-xs"
+                          x-text="edu.years"
+                        ></p>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
+                    Honors & Rewards.
+                  </h3>
+                  <div
+                    x-data="honors"
+                    class="grid sm:grid-cols-3 lg:gap-4 gap-4 mt-5"
+                  >
+                    <template x-for="edu in honors">
+                      <div
+                        class="rounded-2xl lg:p-5 p-4 shadow-sm bg-gray-100 dark:bg-slate-800"
+                      >
+                        <h3
+                          class="text-gray-700 dark:text-slate-200 text-md italic mt-2"
+                          x-text="edu.institute"
+                        ></h3>
+                      </div>
+                    </template>
+                  </div>
+                </div>
                 <div class="mt-5 grid sm:grid-cols-2 gap-8 fade-in">
                   <!-- Skills -->
                   <div>
                     <h3
                       class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
                     >
-                      Skills
+                      Technical Skills.
                     </h3>
                     <div x-data="skills" class="space-y-4 mt-5">
                       <template x-for="skill in skills">
@@ -289,7 +341,7 @@
                     <h3
                       class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
                     >
-                      Knowledge
+                    General Skills.
                     </h3>
                     <div x-data="knowledge" class="mt-5 flex gap-2 flex-wrap">
                       <template x-for="k in knowledge">
@@ -472,8 +524,8 @@
                 <div class="pl-4">
                   <p class="text-sm text-gray-500">Linkedin</p>
                   <h4 class="text-gray-700 dark:text-gray-300 font-medium">
-                    <a href="mailto:darvishimehdi.2000@gmail.com"
-                      >darvishimehdi.2000@gmail.com</a
+                    <a href="https://www.linkedin.com/in/mehdi-darvishi/"
+                      >@mehdi-darvishi</a
                     >
                   </h4>
                 </div>
@@ -513,23 +565,23 @@
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // const experiences = [
-    //     {
-    //         title: "Senior Developer",
-    //         years: "2018 - 2020",
-    //         company: "Google Inc.",
-    //     },
-    //     {
-    //         title: "Senior Developer",
-    //         years: "2018 - 2020",
-    //         company: "Twitter Inc.",
-    //     },
-    //     {
-    //         title: "Senior Developer",
-    //         years: "2018 - 2020",
-    //         company: "Facebook Inc.",
-    //     },
-    // ];
+    const teaching_experience = [
+      {
+        degree: "Field & Waves Teaching Assistant",
+        years: "1st Sep. 2023 - present",
+        institute: "Supervised by: Dr.Najmeh Nozhat",
+      },
+      {
+        degree: "Communication I Teaching Assistant",
+        years: "1st Sep. 2023 - present",
+        institute: "Supervised by: Dr.Kamran Kazemi and Dr.Reza Mohseni",
+      },
+      {
+        degree: "Mathematics of High School",
+        years: "10/2020 - 4/2022",
+        institute: "At GAJ Educational Institute",
+      },
+    ];
 
     const educations = [
       {
@@ -542,37 +594,69 @@
     const skills = [
       {
         bgClass: "bg-red-400",
-        name: "HTML",
+        name: "Matlab",
         percent: 95,
       },
       {
         bgClass: "bg-indigo-400",
-        name: "CSS",
+        name: "Python",
         percent: 98,
       },
       {
         bgClass: "bg-blue-400",
-        name: "JavaScript",
+        name: "C",
         percent: 90,
       },
       {
         bgClass: "bg-emerald-400",
-        name: "Vue.JS",
+        name: "Arduino",
+        percent: 95,
+      },
+      {
+        bgClass: "bg-red-400",
+        name: "English",
+        percent: 95,
+      },
+      {
+        bgClass: "bg-indigo-400",
+        name: "Turkish",
         percent: 95,
       },
     ];
 
+    const honors = [
+      {
+        institute:
+          "Ranked among the top 1% of university entrance exam for bachelor’s degree in telecommunication",
+      },
+      {
+        institute:
+          "Received full scholarship from Shiraz University of Technology (tuition waived)",
+      },
+      {
+        institute: "Being a member of “Brilliant Talents”",
+      },
+      {
+        institute:
+          "Director and organizer of 3 courses in summer school 2021, at Shahid Taheri Research Institute (Shiraz University of Technology)",
+      },
+      {
+        institute:
+          "Director and organizer of 3 courses in summer school 2022, at Shahid Taheri Research Institute (Shiraz University of Technology)",
+      },
+    ];
+
     const knowledge = [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Vue.html",
-      "Alpine.html",
-      "React.html",
-      "Laravel",
-      "TailwindCSS",
-      "Bootstrap",
-      "PHP",
+      "CST Studio",
+      "Proteus",
+      "CodeVision",
+      "ADS",
+      "AVR ATMega Series",
+      "AVR XMega Series",
+      "NRF24L01",
+      "LaTeX",
+      "Fast typing",
+      "MS Office",
     ];
   </script>
 </html>
