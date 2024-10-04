@@ -255,6 +255,36 @@
                   >
 
 
+                    Publications.
+                  </h3>
+                  <div
+                    x-data="Publications"
+                    class="grid sm:grid-cols-3 lg:gap-4 gap-4 mt-5"
+                  >
+                    <template x-for="edu in Publications">
+                      <div
+                        class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800"
+                      >
+                        <h4
+                          class="text-gray-700 dark:text-slate-300 text-2xl font-semibold"
+                          x-text="edu.degree"
+                        ></h4>
+                        <h3
+                          class="text-gray-500 dark:text-slate-400 text-md italic mt-2"
+                          x-text="edu.institute"
+                        ></h3>
+                        <p
+                          class="text-gray-500 dark:text-slate-400 text-xs"
+                          x-text="edu.years"
+                        ></p>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
 
                     
 
@@ -618,6 +648,13 @@
   <script src="assets/js/main.js"></script>
   <script>
 
+     const Publications= [
+      {
+        degree: "Multi-Band Bandpass Filter Using CRLH-TZRP",
+        years: "In Progress ",
+        institute: "Arash Bastani, Mehdi Darvishi, and Shahrokh Jam, SeniorMember, IEEE",
+      },
+    ];
 
 
 
@@ -625,7 +662,7 @@
       {
         degree: "BB directional rhombic Nanoantenna",
         years: "",
-        institute: "Bachelor’s Project- in progress",
+        institute: "Bachelor’s Project",
       },
       {
         degree: "UWB Antenna for Mobile Communication Applications",
@@ -660,17 +697,17 @@
     const teaching_experience = [
       {
         degree: "Microwave I Teaching Assistant",
-        years: "Feb. 2024 - present",
+        years: "Winter_2024",
         institute: "Supervised by: Dr.Najmeh Nozhat",
       },
       {
         degree: "Field & Waves Teaching Assistant",
-        years: "Sep. 2023 - Jan. 2024",
+        years: "Fall_2023 & Fall_2024",
         institute: "Supervised by: Dr.Najmeh Nozhat",
       },
       {
         degree: "Communication I Teaching Assistant",
-        years: "Sep. 2023 - Jan. 2024",
+        years: "Fall_2023 & Winter_2024",
         institute: "Supervised by: Dr.Kamran Kazemi",
       },
       {
@@ -682,9 +719,14 @@
 
     const educations = [
       {
-        degree: "Electrical Engineering",
-        years: "2020 - Preset",
-        institute: "SUTech University",
+        degree: "B.Sc. in Electrical Engineering",
+        years: "9/2020 - 9/2024",
+        institute: "Shiraz University of Technology (SUTech)",
+      },
+            {
+        degree: "M.Sc. in Electrical Engineering (Telecommunications)",
+        years: "Winter_2025",
+        institute: "Concordia University",
       },
     ];
 
