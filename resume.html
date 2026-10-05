@@ -253,8 +253,74 @@
                   <h3
                     class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
                   >
+                <!-- Professional Experience -->
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
+                    Professional Experience
+                  </h3>
+                  <div
+                    x-data="professional_experience"
+                    class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5"
+                  >
+                    <template x-for="exp in professional_experience">
+                      <div
+                        class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800"
+                      >
+                        <h4
+                          class="text-gray-700 dark:text-slate-300 text-2xl font-semibold"
+                          x-text="exp.position"
+                        ></h4>
+                        <h3
+                          class="text-gray-500 dark:text-slate-400 text-md italic mt-2"
+                          x-text="exp.institute"
+                        ></h3>
+                        <p
+                          class="text-gray-500 dark:text-slate-400 text-xs"
+                          x-text="exp.years"
+                        ></p>
+                        <p
+                          class="text-gray-600 dark:text-slate-300 text-sm mt-3"
+                          x-text="exp.description"
+                        ></p>
+                      </div>
+                    </template>
+                  </div>
+                </div>
 
-
+                                    <!-- Selected Certifications -->
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
+                    Selected Certifications
+                  </h3>
+                  <div
+                    x-data="certifications"
+                    class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5"
+                  >
+                    <template x-for="cert in certifications">
+                      <div
+                        class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800"
+                      >
+                        <h4
+                          class="text-gray-700 dark:text-slate-300 text-xl font-semibold"
+                          x-text="cert.title"
+                        ></h4>
+                        <h3
+                          class="text-gray-500 dark:text-slate-400 text-md italic mt-2"
+                          x-text="cert.institute"
+                        ></h3>
+                        <p
+                          class="text-gray-500 dark:text-slate-400 text-xs mt-1"
+                          x-text="cert.date"
+                        ></p>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+                    
                     Publications
                   </h3>
                   <div
@@ -287,7 +353,6 @@
                   >
 
                     
-
                     Selected Projects
                   </h3>
                   <div
@@ -314,6 +379,36 @@
                     </template>
                   </div>
                 </div>
+
+                <!-- TECHNICAL & General SKILLS added here -->
+                <div class="fade-in">
+                  <h3
+                    class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
+                  >
+                    TECHNICAL & General SKILLS
+                  </h3>
+                  <div class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
+                    <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
+                      <p class="text-gray-600 dark:text-slate-300 text-sm">
+                        <strong class="text-gray-700 dark:text-slate-200">Software:</strong> CST Studio, ADS, HFSS, COMSOL Multiphysics, Proteus, Cadence, CodeVision
+                      </p>
+                      <p class="text-gray-600 dark:text-slate-300 text-sm mt-2">
+                        <strong class="text-gray-700 dark:text-slate-200">Programming Languages:</strong> MATLAB, Python, C, SystemVerilog
+                      </p>
+                      <p class="text-gray-600 dark:text-slate-300 text-sm mt-2">
+                        <strong class="text-gray-700 dark:text-slate-200">Laboratory & Hardware:</strong> RF/Microwave & mm-Wave Measurements, Anechoic & Reverberation Chambers, Keysight PNA-X/FieldFox/USB VNAs, Signal Generators, Frequency Extenders, AVR Microcontroller, Arduino
+                      </p>
+                      <p class="text-gray-600 dark:text-slate-300 text-sm mt-2">
+                        <strong class="text-gray-700 dark:text-slate-200">Digital skills:</strong> LaTeX, MS Office, 10-Finger Fast Typing, Prezi
+                      </p>
+                      <p class="text-gray-600 dark:text-slate-300 text-sm mt-2">
+                        <strong class="text-gray-700 dark:text-slate-200">Languages:</strong> English (C1), French (B1)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of new section -->
+
                 <div class="fade-in">
                   <h3
                     class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center"
@@ -603,20 +698,62 @@
   <script>
 
      const Publications= [
+             {
+        degree: "ingle-Antenna Assessment of Spatial Uniformity in mmWave Reverberation Chambers",
+        years: "21th European Conference on Antennas and Propagation (EuCAP), 2027",
+        institute: "M. Darvishi, H. Nabila, and L.A. Bronckers*",
+      },
       {
         degree: "Compact multi-band bandpass filter with independently controlled passbands using CRLH-TZRP",
-        years: "Scientific Reports (2026)",
+        years: "Scientific Reports, 2026",
         institute: "Arash Bastani, Shahrokh Jam*, Mehdi Darvishi",
       },
     ];
 
 
+        const professional_experience = [
+      {
+        position: "RF & Antenna Research Intern",
+        years: "9/2026 - Present",
+        institute: "Institut Langevin - Ondes et images, CNRS / ESPCI Paris - PSL | Paris, France",
+        description: "Experimental characterization of reconfigurable metasurface antennas in a reverberation chamber. Managing the complete cycle from initial design and physical prototyping to experimental testing.",
+      },
+      {
+        position: "Research Intern",
+        years: "3/2026 - 9/2026",
+        institute: "Eindhoven University of Technology (TU/e), EM Metrology Lab | Eindhoven, Netherlands",
+        description: "Research on loaded and unloaded mmWave reverberation chambers for antenna measurements of next-generation wireless devices. Worked on a hybrid chamber combining anechoic and reverberation properties for realistic 5G channel emulation and OTA testing.",
+      },
+      {
+        position: "Research & Teaching Assistant",
+        years: "9/2024 - 9/2025",
+        institute: "Shiraz University of Technology, Telecommunication Engineering Department | Shiraz, Iran",
+        description: "Research on MIMO antennas, microstrip filters, and graphene-based filters. Teaching assistance for Microwave I, Fields & Waves, and Telecommunication I, with additional support for EM simulation activities.",
+      },
+      {
+        position: "B.Sc. Electrical Engineering Intern",
+        years: "7/2024 - 9/2024",
+        institute: "Diaeco Wave Company, Testing and Optimization Department | Shiraz, Iran",
+        description: "Performed physical hardware measurements using VNA and optimized circuit performance through iterative EM simulations in ADS and CST Studio.",
+      },
+    ];
 
+    
      const selected_projects= [
+             {
+        degree: "Super-directive Printed Yagi-Uda Antenna",
+        years: "",
+        institute: "EurAAP Small Antenna Super-gain Challenge",
+      },
+      {
+        degree: "5.8 GHz Microstrip Antenna Array Design",
+        years: "",
+        institute: "RF for Connected Objects Project",
+      },
        {
         degree: "5G Angular Positioning System: DL-AoD Estimation using Massive MIMO",
         years: "",
-        institute: "Master 1 Research Project",
+        institute: "Master 1 Scientific Project",
       },
       {
         degree: "BB Directional Rhombic Nanoantenna",
@@ -651,8 +788,7 @@
 
     ];
 
-    
-
+  
     
     const teaching_experience = [
       {
@@ -682,11 +818,29 @@
       },
     ];
 
-    const educations = [
+        const certifications = [
       {
-        degree: "M.Sc. in Electrical Engineering for Communications and Information Processing (EECIP)",
-        years: "9/2025 - Present",
-        institute: "Polytechnic Institute of Paris - Télécom SudParis",
+        title: "Advanced Packaging for Wireless Microwave & Photonics Systems",
+        institute: "Center for Wireless Technology Eindhoven (CWTe) | EuMA | Casimir Institute Eindhoven, Netherlands",
+        date: "Aug. 2026",
+      },
+      {
+        title: "6G Deployment | Antenna Systems, Digital Twins, Testbeds",
+        institute: "James Watt School of Engineering, University of Glasgow, Scotland",
+        date: "Nov. 2025",
+      },
+    ];
+    
+    const educations = [
+            {
+        degree: "M.Sc. (M2) in Waves and Devices for Advanced Wireless Communication Systems (WaveWiCom)",
+        years: "9/2026 - 8/2027",
+        institute: "Sorbonne University",
+      },
+            {
+        degree: "M.Sc. (M1) in Electrical Engineering for Communications and Information Processing (EECIP)",
+        years: "9/2025 - 8/2026",
+        institute: "Polytechnic Institute of Paris (IP Paris)",
       },
             {
         degree: "B.Sc. in Electrical Engineering, Telecommunications",
@@ -700,7 +854,11 @@
     const honors = [
        {
         institute:
-          "Awarded the Erasmus+ mobility scholarship for an international research internship at the Eindhoven University of Technology (TU/e)",
+          "Awarded the Erasmus+ mobility scholarship for an international research internship at EM Metrology Lab at TU/e, Eindhoven, NL",
+      },
+             {
+        institute:
+          "Rank 1st among the 17 students in Electrical & Optical Engineering track at IP Paris (Master year 1)",
       },
        {
         institute:
@@ -715,11 +873,7 @@
           "Ranked among the top 2% nationally in the Iranian National University Entrance Exam (Konkour)”",
       },
       {
-        institute: "Being a member of “Brilliant Talents Guidance Department",
-      },
-      {
-        institute:
-          "Received a scholarship (Tuition Waived) + Final Semester TA Fund from Shiraz University of Technology",
+        institute: "Being a member of “Brilliant Talents Guidance Departmentfor“ for three years at Shiraz Univeristy of Technology ",
       },
       {
         institute:
