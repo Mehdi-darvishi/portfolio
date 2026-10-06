@@ -225,7 +225,7 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Education
                   </h3>
-                  <div x-data="educations" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ educations }" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
                     <template x-for="edu in educations">
                       <div class="rounded-2xl lg:p-5 p-6 shadow-sm bg-red-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-2xl font-semibold" x-text="edu.degree"></h4>
@@ -241,7 +241,7 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Professional Experience
                   </h3>
-                  <div x-data="professional_experience" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ professional_experience }" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
                     <template x-for="exp in professional_experience">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-2xl font-semibold" x-text="exp.position"></h4>
@@ -258,12 +258,13 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Selected Certifications
                   </h3>
-                  <div x-data="certifications" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ certifications }" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
                     <template x-for="cert in certifications">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-xl font-semibold" x-text="cert.title"></h4>
                         <h3 class="text-gray-500 dark:text-slate-400 text-md italic mt-2" x-text="cert.institute"></h3>
                         <p class="text-gray-500 dark:text-slate-400 text-xs mt-1" x-text="cert.date"></p>
+                        <p x-show="cert.description" class="text-gray-600 dark:text-slate-300 text-sm mt-3" x-text="cert.description"></p>
                       </div>
                     </template>
                   </div>
@@ -274,7 +275,7 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Publications
                   </h3>
-                  <div x-data="Publications" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ Publications }" class="grid sm:grid-cols-1 lg:gap-4 gap-4 mt-5">
                     <template x-for="edu in Publications">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-2xl font-semibold" x-text="edu.degree"></h4>
@@ -290,12 +291,13 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Selected Projects
                   </h3>
-                  <div x-data="selected_projects" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ selected_projects }" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
                     <template x-for="edu in selected_projects">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-xl font-semibold" x-text="edu.degree"></h4>
                         <h3 class="text-gray-500 dark:text-slate-400 text-md italic mt-2" x-text="edu.institute"></h3>
                         <p class="text-gray-500 dark:text-slate-400 text-xs" x-text="edu.years"></p>
+                        <p x-show="edu.description && edu.description.trim() !== ''" class="text-gray-600 dark:text-slate-300 text-sm mt-3" x-text="edu.description"></p>
                       </div>
                     </template>
                   </div>
@@ -332,7 +334,7 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Teaching Experience
                   </h3>
-                  <div x-data="teaching_experience" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ teaching_experience }" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
                     <template x-for="edu in teaching_experience">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-indigo-50 dark:bg-slate-800">
                         <h4 class="text-gray-700 dark:text-slate-300 text-xl font-semibold" x-text="edu.degree"></h4>
@@ -348,7 +350,7 @@
                   <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     Honors & Rewards
                   </h3>
-                  <div x-data="honors" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
+                  <div x-data="{ honors }" class="grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-4 mt-5">
                     <template x-for="edu in honors">
                       <div class="rounded-2xl lg:p-5 p-4 shadow-sm bg-gray-100 dark:bg-slate-800">
                         <h3 class="text-gray-700 dark:text-slate-200 text-sm italic mt-2" x-text="edu.institute"></h3>
@@ -363,7 +365,7 @@
                   <div>
                     <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     </h3>
-                    <div x-data="skills" class="space-y-4 mt-5">
+                    <div x-data="{ skills }" class="space-y-4 mt-5">
                       <template x-for="skill in skills">
                         <div>
                           <div class="flex justify-between">
@@ -382,7 +384,7 @@
                   <div>
                     <h3 class="text-2xl text-gray-600 dark:text-slate-300 font-semibold flex items-center">
                     </h3>
-                    <div x-data="knowledge" class="mt-5 flex gap-2 flex-wrap">
+                    <div x-data="{ knowledge }" class="mt-5 flex gap-2 flex-wrap">
                       <template x-for="k in knowledge">
                         <div class="flex-shrink-0 px-4 py-2 rounded-lg shadow-sm bg-white dark:text-slate-300 dark:bg-slate-800" x-text="k"></div>
                       </template>
@@ -568,109 +570,4 @@
         description: "Implemented a Convolutional Neural Network (CNN) for automated traffic sign classification using the German Traffic Sign Recognition Benchmark (GTSRB) dataset. Achieved high-accuracy recognition performance, which demonstrates the model's reliability for intelligent transportation systems.",
       },
       {
-        degree: "Wireless Transceiver System",
-        years: "",
-        institute: "Data Transmission Systems Final Project",
-        description: "Designed and built a complete data transmission and reception system using the NRF24L01 module and a microcontroller to achieve the antenna's efficient operating range. To evaluate how well it performs in real conditions, especially with interference at 2.4 GHz, such as Wi-Fi.  The system transmits and receives messages, voice signals, and changes in light intensity. It achieves reliable communication over distances greater than 240 meters with no signal loss or latency. Beyond this range, up to about 300 meters, signal loss and latency begin to appear.",
-      },
-      {
-        degree: "AM Modulation & Demodulation",
-        years: "",
-        institute: "Telecommunication Circuits Final Project",
-        description: " ",
-      },
-    ];
-
-    const teaching_experience = [
-      {
-        degree: "Microwave I | Teaching Assistant",
-        years: "Winter-2024 & Winter-2025",
-        institute: "Supervised by: Dr.Shahrokh Jam & Dr. Raheleh Basiri",
-      },
-      {
-        degree: "Field & Waves | Teaching Assistant",
-        years: "Fall_2023 & Fall_2024",
-        institute: "Supervised by: Dr.Najmeh Nozhat",
-      },
-      {
-        degree: "Telecommunication I | Teaching Assistant",
-        years: "Fall_2023 & Winter_2024",
-        institute: "Supervised by: Dr.Kamran Kazemi",
-      },
-      {
-        degree: "CST Studio Suite | Workshop",
-        years: "Winter-2024 & Fall-2024",
-        institute: "At Shiraz University of Technology",
-      },
-      {
-        degree: "Mathematics of High School",
-        years: "10/2020 - 4/2022",
-        institute: "At GAJ Educational Institute",
-      },
-    ];
-
-    const certifications = [
-      {
-        title: "Advanced Packaging for Wireless Microwave & Photonics Systems",
-        institute: "Center for Wireless Technology Eindhoven (CWTe) | EuMA | Casimir Institute Eindhoven, Netherlands",
-        date: "Aug. 2026",
-        description: "Specialized summer school on advanced packaging for wireless systems, covering microwave/mm-wave/photonics packaging, semiconductor chiplets, antenna integration & Antenna in Package (AiP). This event was also supported by European Microwave Association, and associated with the European projects E2PACKMAN and EPICURE.",
-      },
-      {
-        title: "6G Deployment | Antenna Systems, Digital Twins, Testbeds",
-        institute: "James Watt School of Engineering, University of Glasgow, Scotland",
-        date: "Nov. 2025",
-        description: "Completed specialized training on next-generation (6G) wireless systems, with a focus on antenna arrays, sub-THz spectrum, RIS technology, ubiquitous connectivity, practical use cases, key challenges, testbeds, and digital twins.",
-      },
-    ];
-    
-    const educations = [
-      {
-        degree: "M.Sc. (M2) in Waves and Devices for Advanced Wireless Communication Systems (WaveWiCom)",
-        years: "9/2026 - 8/2027",
-        institute: "Sorbonne University",
-      },
-      {
-        degree: "M.Sc. (M1) in Electrical Engineering for Communications and Information Processing (EECIP)",
-        years: "9/2025 - 8/2026",
-        institute: "Polytechnic Institute of Paris (IP Paris)",
-      },
-      {
-        degree: "B.Sc. in Electrical Engineering, Telecommunications",
-        years: "9/2020 - 9/2024",
-        institute: "Shiraz University of Technology (SUTech)",
-      },
-    ];
-
-    const honors = [
-            {
-        institute: "Awarded the SFRI Scholarship 2026-27 by Faculty of Science & Engineering, Sorbonne Univeristy",
-      },
-      {
-        institute: "Awarded the Erasmus+ mobility scholarship for an international research internship at EM Metrology Lab at TU/e, Eindhoven, NL",
-      },
-      {
-        institute: "Rank 1st among the 17 students in Electrical & Optical Engineering track at IP Paris (Master 1)",
-      },
-      {
-        institute: "Rank 1st among the 25 students in the Telecommunications Group (B.Sc.)",
-      },
-      {
-        institute: "Rank 2nd among the 70 students in Electrical Engineering (B.Sc.)",
-      },
-      {
-        institute: "Ranked among the top 2% nationally in the Iranian National University Entrance Exam (Konkour)”",
-      },
-      {
-        institute: "Being a member of “Brilliant Talents Guidance Departmentfor“ for three years at Shiraz Univeristy of Technology ",
-      },
-      {
-        institute: "Being an educational consultant for 2 years at GAJ Institute",
-      },
-      {
-        institute: "Director and organizer of summer schools 2021 and 2022 at Shiraz University of Technology",
-      },
-    ];
-
-  </script>
-</html>
+        degree
